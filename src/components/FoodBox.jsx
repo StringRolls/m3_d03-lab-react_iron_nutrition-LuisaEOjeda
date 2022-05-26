@@ -4,6 +4,10 @@ import { Card, Row, Col, Divider, Input, Button } from "antd";
 export default function FoodBox(props) {
   const {food, deleteFood} = props;
 
+  function handleOnClick(e) {
+    deleteFood(food);
+  }
+
   return (
     <Col>
       <Card title={food.name} style={{ width: 230, height: 300, margin: 10 }}>
@@ -16,7 +20,7 @@ export default function FoodBox(props) {
           </b>{" "}
           kcal
         </p>
-        <Button type="primary" onClick={deleteFood(food)}> Delete </Button>
+        <Button type="primary" onClick={handleOnClick}> Delete </Button>
       </Card>
     </Col>
   );
